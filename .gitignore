@@ -10,4 +10,4 @@ crash.log
 # Secrets
 *.pem
 *.key
-EOF
+EOFterraform.tfvars
