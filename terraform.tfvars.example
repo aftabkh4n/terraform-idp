@@ -1,0 +1,6 @@
+app_name          = "idp-platform"
+postgres_user     = "idpuser"
+postgres_password = "your-password-here"
+postgres_db       = "idpdb"
+postgres_port     = 5432
+environment       = "local"
