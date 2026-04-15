@@ -14,6 +14,10 @@ terraform {
       source  = "kreuzwerker/docker"
       version = "~> 3.0"
     }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
   }
 }
 
@@ -64,4 +68,17 @@ module "monitoring" {
   source = "./modules/monitoring"
 
   depends_on = [module.kubernetes]
+}
+
+# AWS provider — connects to your AWS account
+provider "aws" {
+  region = var.aws_region
+}
+
+# EKS module — provisions a real cloud Kubernetes cluster
+# IMPORTANT: run terraform destroy when done — EKS costs $0.10/hour
+module "eks" {
+  source       = "./modules/eks"
+  cluster_name = var.eks_cluster_name
+  region       = var.aws_region
 }

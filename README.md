@@ -37,7 +37,7 @@ terraform apply
 
 # Access Grafana
 kubectl port-forward -n monitoring service/prometheus-stack-grafana 3000:80
-# Open http://localhost:3000 — admin / admin123
+# Open http://localhost:3000 - admin / admin123
 ```
 
 ## Tear down
@@ -50,9 +50,9 @@ Everything is removed cleanly. Re-apply anytime to recreate.
 
 ## Structure
 TerraformIDP/
-├── main.tf              # Root — wires all modules together
+├── main.tf              # Root - wires all modules together
 ├── variables.tf         # Input variables
-├── outputs.tf           # Outputs — URLs, connection strings
+├── outputs.tf           # Outputs - URLs, connection strings
 ├── terraform.tfvars     # Your values (gitignored)
 └── modules/
 ├── kubernetes/      # Namespace, deployment, service, ingress
